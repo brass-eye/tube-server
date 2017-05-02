@@ -16,4 +16,7 @@ get '/visits' do
 end
 
 post '/visits' do
+	request.body.rewind
+	request_payload = JSON.parse(request.body.read, :symbolize_names => true)
+	request_payload[:selected_station].to_json
 end
