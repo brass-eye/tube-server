@@ -15,17 +15,7 @@ set :database, {adapter: "sqlite3", database: "foo.sqlite3"}
 
 
 get '/visits' do
-  content_type :json
-  {
-      :visits => {:MAR => {
-          :name => "Marble Arch",
-          :visit_count => 6
-      }, :WAT => {
-          :name => "Waterloo",
-          :visit_count => 10
-      }},
-      :total_visits => 16
-  }.to_json
+  St
 end
 
 get '/stations' do
@@ -39,14 +29,12 @@ post '/visits' do
 end
 
 
-
 class Visits < ActiveRecord::Base
-
+  has_many :stations
 end
 
 class Stations < ActiveRecord::Base
-
-
+  belongs_to :visits
 end
 
 
