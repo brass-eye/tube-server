@@ -11,7 +11,7 @@ configure do
   set :allow_origin, :any
 end
 
-set :database, {adapter: "sqlite3", database: "foo.sqlite3"}
+set :database, {adapter: "sqlite3", database: "db/tube.sqlite3"}
 
 
 get '/visits' do

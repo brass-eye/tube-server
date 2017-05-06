@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170503193137) do
   end
 
   create_table "visits", force: :cascade do |t|
-    t.string "station_id"
+    t.integer "station_id"
     t.string "visit_date"
   end
 
