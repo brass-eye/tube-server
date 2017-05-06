@@ -8,6 +8,7 @@ class VisitsController < ApplicationController
     render json: @visits
   end
 
+
   # GET /visits/1
   def show
     render json: @visit
@@ -46,6 +47,6 @@ class VisitsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def visit_params
-      params.require(:visit).permit(:visit_date, :station_id)
+      params.require(:visit).permit(:station_id, :visit_date)
     end
 end

@@ -4,7 +4,7 @@ class Station < ApplicationRecord
 
   def as_json(options={})
     super(
-        only: [:code, :name],
+        only: [:id, :code, :name],
         include: [:visits => {
             only: :visit_date
         }]

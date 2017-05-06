@@ -13,6 +13,13 @@ class StationsController < ApplicationController
     render json: @station
   end
 
+  # GET /visited
+  def visited
+    @stations = Station.joins(:visits).distinct
+    render json: @stations
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_station
