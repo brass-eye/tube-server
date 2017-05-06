@@ -4,5 +4,6 @@ class CreateStations < ActiveRecord::Migration[5.1]
       t.string :name
       t.string :code
     end
+    add_index :stations, :code
   end
 end
