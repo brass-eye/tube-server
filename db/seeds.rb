@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
+
+hash = JSON.parse(File.read('./db/tfl-tube-data.json'), :symbolize_names => true)
+hash[:stations].each do |key, station|
+  Station.new(:code => key, :name => station).save
+end
